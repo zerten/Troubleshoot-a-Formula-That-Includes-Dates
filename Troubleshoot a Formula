@@ -1,0 +1,20 @@
+Troubleshoot a Formula That Includes Dates
+Create a formula field that determines the date of the last day of the current month. Start with the following formula, use the syntax checker to identify two errors, and fix the errors to produce a valid formula.
+IF( MONTH( NOW() ) = 12,
+DATE( YEAR( NOW() ), 12, 31 ),
+DATE( YEAR( NOW() ), MONTH( NOW() ) + 1, 1) - 1
+
+Create a formula field:
+
+Object: Case
+Field Label: Last Day of Month
+Field Name: Last_Day_of_Month__c
+Formula: Return the date of the last day of the current month
+
+IF( MONTH( TODAY() ) = 12,
+DATE( YEAR( TODAY() ), 12, 31 ),
+DATE( YEAR( TODAY() ), MONTH( TODAY() ) + 1, 1) - 1)
+
+BURADA SU YUKARDAKI FORMULAYI DUZELTTIK, NOW YERINE TODAY OLDU, PARANTEZ EKLENDI.
+
+BOYLECE BURDA BIR CASE ACARSAK YENI BIR CASE, DETAIL KISMINA BAKTIGIMIZDA LAST DATE OF MONTH KISMINI GORURUZ. 
